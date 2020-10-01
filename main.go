@@ -37,6 +37,14 @@ func main() {
 			"success":false,
 		})
 	});
+	v1.GET("/:id",func(c *gin.Context) {
+		c.JSON(200,gin.H{
+			"code":200,
+			"msg":"成功",
+			"success":true,
+			"data":c.Param("id"),
+		})
+	})
 
 	router.Run();
 
