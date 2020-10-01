@@ -4,14 +4,40 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// func main() {
+// 	r := gin.Default();
+// 	r.GET("/hello",func(c *gin.Context) {
+// 		c.JSON(200,gin.H{
+// 			"code":200,
+// 			"msg":"成功",
+// 			"success":true,
+// 		})
+// 	});
+// 	r.Run(":8082")
+// }
+
 func main() {
-	r := gin.Default();
-	r.GET("/hello",func(c *gin.Context) {
+	router := gin.Default();
+
+	//分组
+	v1 := router.Group("/api/v1/topics")
+	v1.GET("",func(c *gin.Context) {
+		username := c.Query("username")
+		if  username != "" {
+			c.JSON(200,gin.H{
+				"code":200,
+				"msg":"成功",
+				"success":true,
+			});
+			return
+		}
 		c.JSON(200,gin.H{
-			"code":200,
-			"msg":"成功",
-			"success":true,
+			"code":404,
+			"msg":"失败",
+			"success":false,
 		})
 	});
-	r.Run(":8082")
+
+	router.Run();
+
 }
