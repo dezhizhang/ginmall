@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"ginApi/src/dao"
+	"ginApi/src/controller"
 )
 
 func main() {
@@ -11,8 +11,8 @@ func main() {
 	//分组
 	v1 := router.Group("/api/v1/topics")
 	{
-		v1.GET("",dao.GetTopList);
-		v1.GET("/:id",dao.GetTopDetail)
+		v1.GET("",controller.GetTopList);
+		v1.GET("/:id",controller.GetTopDetail)
 	}
 	
 
