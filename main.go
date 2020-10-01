@@ -11,8 +11,9 @@ func main() {
 	//分组
 	v1 := router.Group("/api/v1/topics")
 	{
-		v1.GET("",controller.GetTopList);
+		v1.GET("",controller.GetTopList)
 		v1.GET("/:id",controller.GetTopDetail)
+		v1.POST("/create",controller.GetTopCreate)
 	}
 	
 

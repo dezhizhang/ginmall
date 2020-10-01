@@ -23,8 +23,8 @@ func GetTopList(c *gin.Context) {
 	query := model.TopicList{}
 	err := c.BindQuery(&query)
 	if err != nil {
-		c.JSON(404,gin.H{
-			"code":"404",
+		c.JSON(400,gin.H{
+			"code":400,
 			"msg":"请求错误",
 			"success":false,
 		});
@@ -36,5 +36,23 @@ func GetTopList(c *gin.Context) {
 		"success":true,
 		"data":query,
 	})
-	
+}
+
+func GetTopCreate(c *gin.Context) {
+	query := model.Topic{}
+	err := c.BindJSON(&query)
+	if err != nil {
+		c.JSON(400,gin.H{
+			"code":400,
+			"msg":"请求错误",
+			"success":false,
+		});
+		return;
+	}
+	c.JSON(200,gin.H{
+		"code":200,
+		"msg":"成功",
+		"success":true,
+		"data":query,
+	})
 }
