@@ -25,3 +25,14 @@ func UserAdd(c *gin.Context) {
 		"success":true,
 	})
 }
+
+func GetUser(c *gin.Context) {
+	user := []model.User{}
+	utils.DB.Find(&user)
+	c.JSON(200,gin.H{
+		"code":200,
+		"msg":"成功",
+		"success":true,
+		"data":user,
+	})
+}
