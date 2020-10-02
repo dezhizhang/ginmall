@@ -18,6 +18,7 @@ func main() {
 	f := router.Group("")
 	{
 		f.GET("/", front.Home)
+		f.GET("/index", front.Home)
 		f.GET("/login", front.Login)
 		f.GET("/register", front.Register)
 		f.GET("/order", front.Order)
