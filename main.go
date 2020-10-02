@@ -18,6 +18,7 @@ func main() {
 	f := router.Group("")
 	{
 		f.GET("/", front.Home)
+		f.GET("/login", front.Login)
 	}
 	//管理后台部分
 	// admin := router.Group("/admin")
