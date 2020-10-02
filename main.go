@@ -19,6 +19,9 @@ func main() {
 	{
 		f.GET("/", front.Home)
 		f.GET("/login", front.Login)
+		f.GET("/register", front.Register)
+		f.GET("/order", front.Order)
+		f.GET("/cart", front.Cart)
 	}
 	//管理后台部分
 	// admin := router.Group("/admin")
