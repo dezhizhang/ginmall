@@ -20,6 +20,7 @@ func main() {
 		v1.POST("/create",controller.GetTopCreate)
 		v1.POST("/user/add",controller.UserAdd)
 		v1.GET("/user/info",controller.GetUser)
+		v1.GET("/user/info/:id",controller.GetUserOne)
 	}
 	defer utils.DB.Close()
 	router.Run();
