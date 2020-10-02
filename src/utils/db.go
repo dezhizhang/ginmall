@@ -1,5 +1,5 @@
 
-
+/*mysql数据库连接*/
 package utils
 
 import (
