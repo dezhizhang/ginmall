@@ -1,8 +1,8 @@
 package main
 
 import (
-	"ginApi/src/controller/front"
-	"ginApi/src/utils"
+	"ginApi/controller/front"
+	"ginApi/utils"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -11,8 +11,8 @@ import (
 func main() {
 
 	router := gin.Default()
-	router.StaticFS("static", http.Dir("./src/static"))
-	router.LoadHTMLGlob("./src/views/*")
+	router.StaticFS("static", http.Dir("./static"))
+	router.LoadHTMLGlob("./views/*")
 
 	//前端pc
 	f := router.Group("")
