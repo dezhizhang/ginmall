@@ -1,7 +1,7 @@
 package main
 
 import (
-	"ginApi/src/controller"
+	"ginApi/src/controller/front"
 	"ginApi/src/utils"
 
 	"github.com/gin-gonic/gin"
@@ -10,22 +10,20 @@ import (
 func main() {
 
 	router := gin.Default()
+	router.Static("/static", "./static")
+	router.LoadHTMLGlob("./src/views/*")
 
-	// conn := utils.RedisDefaultPool.Get()
-	// ret, err := redis.String(conn.Do("get", "username"))
-	// if err != nil {
-	// 	fmt.Println("出错了", err)
-	// 	return
-	// }
-	//分组
-	v1 := router.Group("/api/v1")
+	//前端pc
+	f := router.Group("")
 	{
-		v1.GET("", controller.GetTopList)
-		v1.POST("/create", controller.GetTopCreate)
-		v1.POST("/user/add", controller.UserAdd)
-		v1.GET("/user/info", controller.GetUser)
-		v1.GET("/user/info/:id", controller.GetUserOne)
+		f.GET("/", front.Home)
 	}
+	//管理后台部分
+	// admin := router.Group("/admin")
+
+	//小程序api部分
+	// api := router.Group("/api/v1")
+
 	defer utils.DB.Close()
 	router.Run()
 
