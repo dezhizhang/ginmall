@@ -1,28 +1,22 @@
 package main
 
 import (
-	"fmt"
 	"ginApi/src/controller"
 	"ginApi/src/utils"
 
 	"github.com/gin-gonic/gin"
-	"github.com/gomodule/redigo/redis"
 )
 
 func main() {
 
 	router := gin.Default()
 
-	conn := utils.RedisDefaultPool.Get()
-	ret, err := redis.String(conn.Do("get", "username"))
-	if err != nil {
-		fmt.Println("出错了", err)
-		return
-	}
-	fmt.Println("+++")
-	fmt.Println(ret)
-	fmt.Println("+++++")
-
+	// conn := utils.RedisDefaultPool.Get()
+	// ret, err := redis.String(conn.Do("get", "username"))
+	// if err != nil {
+	// 	fmt.Println("出错了", err)
+	// 	return
+	// }
 	//分组
 	v1 := router.Group("/api/v1")
 	{
