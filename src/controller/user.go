@@ -7,8 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"ginApi/src/model"
 	"ginApi/src/utils"
-	
-	
 )
 
 func UserAdd(c *gin.Context) {
