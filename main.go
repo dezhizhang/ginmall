@@ -18,7 +18,7 @@ func main() {
 	{
 		v1.GET("",controller.GetTopList)
 		v1.POST("/create",controller.GetTopCreate)
-		v1.POST("/add/user",controller.UserAdd)
+		v1.POST("/user/add",controller.UserAdd)
 		v1.GET("/user/info",controller.GetUser)
 	}
 	defer utils.DB.Close()
