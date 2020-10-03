@@ -30,6 +30,7 @@ func main() {
 	b := router.Group("/admin")
 	{
 		b.GET("/login", back.Login)
+		b.GET("/manager", back.Manager)
 	}
 
 	//小程序api部分
