@@ -1,6 +1,7 @@
 package main
 
 import (
+	"ginApi/controller/back"
 	"ginApi/controller/front"
 	"ginApi/utils"
 	"net/http"
@@ -26,7 +27,10 @@ func main() {
 		f.GET("/group", front.Group)
 	}
 	//管理后台部分
-	// admin := router.Group("/admin")
+	b := router.Group("/admin")
+	{
+		b.GET("/login", back.Login)
+	}
 
 	//小程序api部分
 	// api := router.Group("/api/v1")

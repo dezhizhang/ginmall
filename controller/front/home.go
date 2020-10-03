@@ -5,5 +5,5 @@ import (
 )
 
 func Home(c *gin.Context) {
-	c.HTML(200, "index.html", nil)
+	c.HTML(200, "front/index.html", nil)
 }

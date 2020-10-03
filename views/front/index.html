@@ -1,5 +1,6 @@
 
-{{template "header" .}}
+{{ define "front/index.html" }}
+{{template "front/header" .}}
 </div>
 <!--幻灯片样式-->
    	<div id="slideBox" class="slideBox">
@@ -512,6 +513,7 @@
 </div>
 </body>
 </html>
+{{end}}
 
 
 <script>$("#allSortOuterbox").slide({ titCell:".Menu_list li",mainCell:".menv_Detail",	});</script>
