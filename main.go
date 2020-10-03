@@ -12,7 +12,7 @@ func main() {
 
 	router := gin.Default()
 	router.StaticFS("static", http.Dir("./static"))
-	router.LoadHTMLGlob("./views/*")
+	router.LoadHTMLGlob("./views/**/*")
 
 	//前端pc
 	f := router.Group("")

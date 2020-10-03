@@ -9,5 +9,5 @@ import (
 // }
 
 func Group(c *gin.Context) {
-	c.HTML(200, "order.html", nil)
+	c.HTML(200, "front/order.html", nil)
 }

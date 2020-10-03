@@ -5,5 +5,5 @@ import (
 )
 
 func Register(c *gin.Context) {
-	c.HTML(200, "register.html", nil)
+	c.HTML(200, "front/register.html", nil)
 }

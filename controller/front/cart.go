@@ -5,5 +5,5 @@ import (
 )
 
 func Cart(c *gin.Context) {
-	c.HTML(200, "cart.html", nil)
+	c.HTML(200, "front/cart.html", nil)
 }
