@@ -1,5 +1,6 @@
-{{template "../public/header.html" .}}
-{{template "../public/sidebar.html" .}}
+{{ define "back/roleAdd.html" }}
+{{template "header.html" .}}
+{{template "sidebar.html" .}}
 <!--main contents start-->
 <main class="content_wrapper">
 <!--page title start-->
@@ -66,7 +67,7 @@
 </div>
 <!-- Content_right_End -->
 <!-- Footer -->
-<%include ../public/footer.html%>
+{{template "footer.html" .}}
 <!-- Footer_End -->
 </div>
 		
@@ -78,3 +79,4 @@
 <script type="text/javascript" src="/static/back/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="/static/back/js/custom.js" type="text/javascript"></script>
 </html>
+{{end}}

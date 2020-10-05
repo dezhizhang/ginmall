@@ -29,8 +29,13 @@ func main() {
 	//管理后台部分
 	b := router.Group("/admin")
 	{
+		b.GET("/home", back.Home)
 		b.GET("/login", back.Login)
 		b.GET("/manager", back.Manager)
+		b.GET("/manager/add", back.ManagerAdd)
+		b.GET("/role", back.Role)
+		b.GET("/role/add", back.RoleAdd)
+
 	}
 
 	//小程序api部分
