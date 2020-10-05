@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"ginmall/model"
 	"ginmall/utils"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -38,6 +39,21 @@ func RoleDoAdd(c *gin.Context) {
 		fmt.Println("插入数据失败", err)
 		return
 	}
-	// c.Redirect(200, "/admin/role")
-	// c.Request.URL.Path = "/admin/role"
+}
+
+func RoleDelete(c *gin.Context) {
+	id, err := strconv.Atoi(c.Query("id"))
+	if err != nil {
+		fmt.Println("类型转换失败")
+		return
+	}
+	role := model.Role{Id: id}
+	err = utils.DB.Delete(&role).Error
+	if err != nil {
+		fmt.Println("删除失败", err)
+		return
+	}
+
+	// c.Redirect(http.StatusFound, "/admin/role")
+
 }

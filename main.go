@@ -34,9 +34,11 @@ func main() {
 		b.GET("/manager", back.Manager)
 		b.GET("/manager/add", back.ManagerAdd)
 		b.POST("/manager/doAdd", back.ManagerDoAdd)
+		// b.GET("//manager/delete", back.ManagerDelete)
 		b.GET("/role", back.Role)
 		b.GET("/role/add", back.RoleAdd)
 		b.POST("/role/doAdd", back.RoleDoAdd)
+		b.GET("/role/delete", back.RoleDelete)
 
 	}
 
