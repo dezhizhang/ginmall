@@ -1,9 +1,9 @@
 package main
 
 import (
-	"ginApi/controller/back"
-	"ginApi/controller/front"
-	"ginApi/utils"
+	"ginmall/controller/back"
+	"ginmall/controller/front"
+	"ginmall/utils"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

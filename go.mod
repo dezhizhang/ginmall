@@ -1,4 +1,4 @@
-module ginApi
+module ginmall
 
 go 1.14
 

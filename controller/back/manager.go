@@ -2,8 +2,8 @@ package back
 
 import (
 	"fmt"
-	"ginApi/model"
-	"ginApi/utils"
+	"ginmall/model"
+	"ginmall/utils"
 
 	"github.com/gin-gonic/gin"
 )
