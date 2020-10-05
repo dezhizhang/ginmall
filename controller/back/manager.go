@@ -1,6 +1,10 @@
 package back
 
 import (
+	"fmt"
+	"ginApi/model"
+	"ginApi/utils"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,5 +17,16 @@ func ManagerAdd(c *gin.Context) {
 }
 
 func ManagerDoAdd(c *gin.Context) {
+	manager := model.Manager{}
+	err := c.Bind(&manager)
+	if err != nil {
+		fmt.Println("帮定失败", err)
+		return
+	}
+	err = utils.DB.Create(&manager).Error
+	if err != nil {
+		fmt.Println("添加失败", err)
+		return
+	}
 
 }

@@ -33,6 +33,7 @@ func main() {
 		b.GET("/login", back.Login)
 		b.GET("/manager", back.Manager)
 		b.GET("/manager/add", back.ManagerAdd)
+		b.POST("/manager/doAdd", back.ManagerDoAdd)
 		b.GET("/role", back.Role)
 		b.GET("/role/add", back.RoleAdd)
 		b.POST("/role/doAdd", back.RoleDoAdd)
