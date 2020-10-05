@@ -57,7 +57,22 @@
 												</tr>
 											</thead>
 											<tbody>
-											
+												{{range $key,$value:= .managerList }}
+													<tr>
+														<td>{{$key}}</td>
+														<td>{{$value.Username}}</td>
+														<td>{{$value.Email}}</td>
+														<td>{{$value.Mobile}}</td>
+														<td>{{$value.RoleId}}</td>
+														<td>{{$value.IsSuper}}</td>
+														<td>{{$value.Description}}</td>
+														<td>{{$value.AddTime }}</td>
+														<td>
+															<a href="/admin/manager/edit?id={{$value.Id}}" class="btn btn-info btn-color">修改</a>
+															<a href="/admin/manager/delete?id={{$value.Id}}" class="btn btn-danger btn-color">删除</a>
+														</td>
+													</tr>
+												{{end}}
 											</tbody>
 										</table>
 									</div>

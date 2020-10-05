@@ -38,4 +38,6 @@ func RoleDoAdd(c *gin.Context) {
 		fmt.Println("插入数据失败", err)
 		return
 	}
+	// c.Redirect(200, "/admin/role")
+	// c.Request.URL.Path = "/admin/role"
 }
